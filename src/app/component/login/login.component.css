@@ -1,0 +1,22 @@
+form {
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: white;
+}
+
+
+.form-div-s {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 150px);
+}
+
+
+.col-md-6 {
+  border-radius: 5px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
