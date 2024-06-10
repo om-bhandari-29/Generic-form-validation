@@ -5,16 +5,28 @@ form {
   background-color: white;
 }
 
-.form-div-s{
+.form-div-s {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: calc(100vh - 150px);
 }
 
-.col-md-6{
+.col-md-6 {
   border-radius: 5px;
   padding: 0px;
   display: flex;
   align-items: center;
 }
+
+.open-eye {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid #ced4da;
+}
+
+/* .border-right-0{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+} */

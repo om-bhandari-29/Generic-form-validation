@@ -7,8 +7,9 @@ import { FormErrors } from '../constant/constants.constant';
 })
 export class FormValidationDirective implements OnInit {
 
-  @Input() controlName!: FormControl;
+  @Input() controlName!: FormControl; 
   @Input() formGroup!: FormGroup;
+  @Input() patternError: string = "";
 
   constructor(private el: ElementRef, private rederer: Renderer2) {}
 
@@ -19,6 +20,8 @@ export class FormValidationDirective implements OnInit {
     })
 
     this.controlName.valueChanges.subscribe(() => {
+      console.log(this.controlName.errors);
+      
       this.updateErrorMessages();
     })
   }
@@ -35,9 +38,11 @@ export class FormValidationDirective implements OnInit {
       if (this.controlName.errors['required']) {
         this.addErrorMessage(FormErrors.required);
       }
+      else
       if (this.controlName.errors['pattern']) {
-        this.addErrorMessage(FormErrors.email);
+        this.addErrorMessage(this.patternError);
       }
+      else
       if (this.controlName.errors['minlength']) {
         this.addErrorMessage(FormErrors.minLength(this.controlName.errors['minlength'].requiredLength));
       }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginModel, LoginData } from '../../model/login.model';
+import { FormErrors } from '../../shared/constant/constants.constant';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,8 @@ export class LoginComponent {
   constructor(){
     // super();
   }
+
+  public FormError = FormErrors;
 
   public loginForm: FormGroup<LoginModel> = new FormGroup<LoginModel>({
     email: new FormControl(null, [Validators.required, Validators.pattern(/[a-zA-Z0-9_\-\.]+@[a-z]+\.[c][o][m]/)]),
